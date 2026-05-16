@@ -25,20 +25,16 @@ if (flutterVersionName == null) {
 android {
     namespace "com.studyx.app"
     compileSdk 35
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = '17'
     }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-
     defaultConfig {
         applicationId "com.studyx.app"
         minSdk 21
@@ -46,7 +42,6 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
     buildTypes {
         release {
             signingConfig signingConfigs.debug
@@ -54,6 +49,10 @@ android {
             shrinkResources false
         }
     }
+}
+
+flutter {
+    source '../..'
 }
 
 dependencies {
